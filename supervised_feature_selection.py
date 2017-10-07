@@ -4,6 +4,8 @@ import random
 from os import listdir
 from sklearn.externals import joblib
 from sklearn.feature_extraction import DictVectorizer
+from sklearn.feature_selection import SelectKBest, chi2
+
 document_list = listdir('./tagged.es')
 
 selector = SelectKBest(score_func=chi2, k=350000) 
