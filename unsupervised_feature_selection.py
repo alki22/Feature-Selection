@@ -38,7 +38,7 @@ for token in parsed_data:
 vectorizer = DictVectorizer()
 vectors = vectorizer.fit_transform(corpus)
 
-selector = TruncatedSVD(n_components=1000)
+selector = TruncatedSVD(n_components=350000)
 reduced_vectors = selector.fit_transform(vectors)
 
 joblib.dump(selector,'selector_unsup.pkl')
